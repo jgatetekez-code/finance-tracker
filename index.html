@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Student Finance Tracker</h1>
+        <p>Manage your spending, understand your habits, and stay on budget.</p>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>
+
+                This website helps students keep track of their expenses and manage their money.
+
+            </p>
+        </section>
+
+        <section id="add-expense">
+            <h2>Add an expense</h2>
+
+            <form id="transaction-form">
+                <div>
+                    <label for="description">Expense Description</label>
+                    <input type="text" id ="description" name="description"
+                         
+                        placeholder="Example: Lunch" required>
+                     <p id="description-error"></p>
+
+
+                </div>
+                
+                <div>
+                    <label for="category">Category</label>
+                    <input type="text" id="category" name="category"
+                        placeholder="Example: Food" required>
+                    <p id="category-error"></p>
+                </div>
+
+                <div>
+                    <label for="date">date</label>
+                    <input type="date" id="date" name="date" required>
+                    <p id="date-error"></p>
+                </div>
+
+               <p id="form-error" role="alert"></p>
+
+                <button type="submit" id="save-transaction">
+                    Save Expense 
+
+                </button>
+                
+             <button type="button" id="cancel-edit" hidden>
+                    Cancel Edit
+                    </button>
+
+                </form>
+            </section>
+            
+            <section id="transaction">
+                <h2>My Transactions</h2>
+                
+                <label for="search-input">Search Expenses</label>
+                <input type="text" id="search-input"
+                    placeholder="Search using a word or regular expression">
+
+
+                <div>
+                    <input type="checkbox" id="case-insensitive" checked>
+                    <label for="case-insensitive">Ignore letter case</label>
+                    
+                </div>
+
+                <p id="search-error" role="alert"></p>
+
+                <table>
+                    <caption>List of my expenses</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                
+                    </thead>
+                    <tbody id="transaction-list">
+                        <tr>
+                            <td colspan="5">No expenses added yet.</td>
+
+                        </tr>
+                    </tbody>
+                   
+                </table>
+        
+            </section>
+
+            <section id="settings">
+                <h2>Budget settings</h2>
+                 <form id="settings-form">
+                    <div>
+
+                        <label for="budget-cap">Monthly Budget Limit (RWF)</label>
+                        <input type="number" id="budget-cap" name="budget-cap"
+
+                            min="0" step="0.01" placeholder="Enter your budget">
+    
+            
+                    </div>
+
+                    <div>
+
+                        <label for="base-currency">Currency</label>
+                        <select id="base-currency">
+                            <option value="RWF">Rwandan Franc </option>
+                            <option value="USD">US Dollar (USD)</option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+                        <label for="usd-rate">RWF per 1 USD</label>
+                        <input type="number" id="usd-rate"
+                            min="0.01" step="0.01" value="1400">
+                    </div>
+
+        
+
+           <div>
+
+                <label for="eur-rate">RWF per 1 EUR</label>
+                <input type="number" id="eur-rate"
+                    min="0.01" step="0.01" value="1550">
+           </div>
+
+           <button type="submit">Save Settings</button>
+           <p id="settings-status" role="status"></p>
+
+           </form>
+
+           <p id="budget-status" role="status"></p>
+           <p id="budget-warning" role="alert"></p>
+
+           </section>
+
+           <section id="data-actions">
+                <h2>Import and Export</h2>
+
+                <p>You can save your expenses or load them from a JSON file.</p>
+           
+                <button type="button" id="export-json">
+                    Export Transactions
+
+                </button>
+
+                <div>
+                    <label for="import-json">choose a JSON file</label>
+                    <input type="file" id="import-json" accept=".json,application/json">
+
+                </div>
+
+                <p id="import-export-status" role="status"></p>
+                </section>
+                 
+                </main>
+
+                <footer>
+
+                    <p>Student Finance Tracker</p>
+                    <p>Created to help students manage their spending.</p>
+                    </footer>
+    
+
+     
+    </body>
+</html>
