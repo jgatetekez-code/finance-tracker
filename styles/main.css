@@ -24,6 +24,21 @@ footer {
     background: #183153;
 
 }
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: white;
+}
+
+nav a {
+    padding: 10px 14px;
+    color: #183153;
+    text-decoration: none;
+    font-weight: bold;
+}
 
 
 header h1 {
@@ -46,6 +61,21 @@ section {
     box-shadow: 0 2px 8px rgba(0, 0,0, 0.08);
 
 }
+
+main > section {
+    display: none;
+}
+
+
+main > section:target {
+    display: block;
+}
+
+
+main:not(:has(> section:target)) > #about {
+    display: block;
+}
+
 
 h2 {
     margin-top: 0;

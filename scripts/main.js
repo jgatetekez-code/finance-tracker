@@ -13,12 +13,13 @@ function save() {
 let transactionsUI = null;
 let budgetUI = null;
 
+
 function refreshUI() {
     if (transactionsUI) {
         transactionsUI.render();
     }
 
-    if (budgetUI) {
+    if (budgetUI){
         budgetUI.renderBudget();
     }
 }
