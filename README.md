@@ -2,6 +2,11 @@ Student Finance Tracker is a Web aplication designed to help students record the
 
 the project was built using HTML ,CSS, and JavaScript.
 
+Project Demo
+
+Watch the video demostrationn of my Student Finance Tracker here:  
+https://youtu.be/3mqGR3RdxhY
+
 Features
 
 .Expense management :Add,edit,and delete expenses.
